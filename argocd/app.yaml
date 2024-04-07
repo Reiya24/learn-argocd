@@ -7,7 +7,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: git@github.com:Reiya24/learn-devtron.git
+    repoURL: git@github.com:Reiya24/learn-argocd.git
     targetRevision: HEAD
     path: my-app
   destination:

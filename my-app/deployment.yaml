@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: learn-argocd
-        image: nginx:latest
+        image: asia-southeast1-docker.pkg.dev/reiya-playground/learn-argocd/frontend
         ports:
           - containerPort: 80
