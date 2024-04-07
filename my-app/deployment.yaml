@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: learn-argocd
+  namespace: learn-argocd
+  labels:
+    app: learn-argocd
+spec:
+  selector:
+    matchLabels:
+      app: learn-argocd
+  template:
+    metadata:
+      labels:
+        app: learn-argocd
+    spec:
+      containers:
+      - name: learn-argocd
+        image: nginx:latest
+        ports:
+          - containerPort: 80
