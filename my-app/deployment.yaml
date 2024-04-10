@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: learn-argocd
-        image: asia-southeast1-docker.pkg.dev/reiya-playground/learn-argocd/frontend
+        image: asia-southeast1-docker.pkg.dev/reiya-playground/learn-argocd/frontend:latest
         resources:
           limits:
             memory: "100Mi"
