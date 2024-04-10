@@ -49,6 +49,8 @@ metadata:
   namespace: learn-argocd
   labels:
     app: learn-argocd
+  annotations:
+    kubernetes.io/ingress.class: gce
 spec:
   rules:
     - host: ingress.reiya.tech
