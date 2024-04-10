@@ -18,5 +18,44 @@ spec:
       containers:
       - name: learn-argocd
         image: asia-southeast1-docker.pkg.dev/reiya-playground/learn-argocd/frontend
+        resources:
+          limits:
+            memory: "100Mi"
+            cpu:  "10m"
         ports:
           - containerPort: 80
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: learn-argocd
+spec:
+  type: ClusterIP
+  selector:
+    app: learn-argocd
+  ports:
+    - port: 8080
+      targetPort: 80
+
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: learn-argocd
+  labels:
+    app: learn-argocd
+spec:
+  rules:
+    - host: ingress.reiya.tech
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: learn-argocd
+                port:
+                  number: 8080
