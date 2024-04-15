@@ -5,7 +5,6 @@ replicas:
     count: 2
 images:
   - name: asia-southeast1-docker.pkg.dev/reiya-playground/learn-argocd/frontend
-    newTag: v1.0
 resources:
   - ../../my-app  
 
