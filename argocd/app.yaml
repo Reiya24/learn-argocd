@@ -4,11 +4,25 @@ kind: Application
 metadata:
   name: my-app
   namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: asia-southeast1-docker.pkg.dev/reiya-playground/learn-argocd/frontend:~v1.0
 spec:
   project: default
   source:
     repoURL: git@github.com:Reiya24/learn-argocd.git
-    targetRevision: HEAD
-    path: my-app
+    targetRevision: main
+    path: environments/dev
   destination:
     server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      allowEmpty: false
+    syncOptions:
+      - Validate=true
+      - CreateNamespace=false
+      - PrunePropagationPolicy=foreground
+      - PruneLast=true

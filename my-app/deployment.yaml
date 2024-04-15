@@ -1,4 +1,10 @@
 ---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: learn-argocd
+
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -17,7 +23,7 @@ spec:
     spec:
       containers:
       - name: learn-argocd
-        image: asia-southeast1-docker.pkg.dev/reiya-playground/learn-argocd/frontend:latest
+        image: asia-southeast1-docker.pkg.dev/reiya-playground/learn-argocd/frontend
         resources:
           limits:
             memory: "100Mi"
@@ -63,3 +69,4 @@ spec:
                 name: learn-argocd
                 port:
                   number: 80
+
