@@ -9,7 +9,7 @@ on:
 env:
   PROJECT_ID: reiya-playground
   REGION: asia-southeast1
-  GAR_LOCATION: asia-southeast1-docker.pkg.dev/reiya-playground/learn-argocd/frontend
+  GAR_LOCATION: asia-southeast1-docker.pkg.dev/reiya-playground/learn-argocd/frontend:v1.0
 jobs:
   build-push-artifact:
     runs-on: ubuntu-latest
