@@ -1,10 +1,10 @@
 ---
-namespace: staging
+namespace: dev
 replicas:
-  - name: learn-argocd
+  - name: frontend-deployment
     count: 2
 images:
   - name: asia-southeast1-docker.pkg.dev/reiya-playground/learn-argocd/frontend
+    newTag: v0.1.0
 resources:
-  - ../../my-app  
-
+  - ../../../my-app  

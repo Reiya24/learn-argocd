@@ -4,3 +4,4 @@ metadata:
   name: arbitrary
 resources:
   - deployment.yaml
+  - Namespace.yaml
