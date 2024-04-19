@@ -8,7 +8,7 @@ import TheWelcome from './components/TheWelcome.vue'
     <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="Testing argocd, SHOULD BE CHANGED 1.1" />
+      <HelloWorld msg="Testing argocd, SHOULD BE CHANGED 1.4" />
     </div>
   </header>
 
